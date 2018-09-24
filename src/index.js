@@ -1,50 +1,31 @@
+
 module.exports = function solveEquation(equation) {
   // your implementation
-  let array = [];
-  array=equation.charAt(0);
-  let a = [];
-  let b = [];
-  let c = [];
-  let i=0, j=0, q=0;
-  while(array[i]!=' ')
-    {
-    a[i]=array[i]; 
-    i++;
-    }
-    j=i;
-    j=j+7;
-    while(array[j]!=' ')
-    {
-      b[j]=array[j]; j++;
-    }
-    i=j+1;
-    while(array[i]!=' ')
-    {
-      b[j]=array[i]; j++; i++;
-    }
-    j=i+5;
-    while(array[j]!=' ')
-    {
-      c[q]=array[j];
-      q++; j++;
-    }
-    j=j+1;
-    while(array)
-    {
-      c[q]=array[j];
-      j++; q++;
-    }
+  let mass = [];
+  mass = equation.split(' ');
+
+  let a;
+  let b;
+  let c;
+
+  a=mass[0];
+  b=mass[3]+mass[4];
+  c=mass[7]+mass[8];
+
     let A = Number(a);
     let B = Number(b);
     let C = Number(c);
 
     let D=Math.pow(B,2)-4*A*C;
-    D=Math.sqrt(D);
-    let x1, x2;
-    x1=Number.isInteger((-B-D)/2);
-    x2=Number.isInteger((int)(-B+D)/2);
+
+    let x1 = 0, x2 = 0;
+
+    x1=Math.round((-B-Math.sqrt(D))/(2*A));
+    x2=Math.round((-B+Math.sqrt(D))/(2*A));
+
     let result = [];
-    if (x1>x2)
+
+    if (x1 > x2)
     {
       result[0]=x2;
       result[1]=x1;
